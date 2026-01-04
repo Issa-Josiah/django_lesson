@@ -1,0 +1,112 @@
+/* ===== CSS RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    --main-bg: #FCFCFC;
+    --section-bg: #CFD6EA;
+    --accent: #9BC53D;
+    --text-dark: #000000;
+    --text-muted: #5D737E;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    padding: 30px;
+    line-height: 1.6;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: var(--text-muted);
+    font-size: 1.9rem;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid var(--text-muted);
+    padding-bottom: 4px;
+}
+
+h3, h4 {
+    color: var(--text-dark);
+    margin-top: 18px;
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+    margin: 10px 0;
+    color: var(--text-dark);
+}
+
+/* ===== CODE BLOCKS ===== */
+code {
+    display: block;
+    background-color: var(--section-bg);
+    border-left: 4px solid var(--accent);
+    padding: 8px 10px;
+    font-family: Consolas, monospace;
+    color: var(--text-dark);
+    margin: 10px 0;
+}
+
+/* ===== IMAGES ===== */
+img {
+    max-width: 95%;
+    display: block;
+    margin: 15px auto;
+    border: 2px solid var(--text-muted);
+    border-radius: 6px;
+}
+
+/* ===== IFRAMES ===== */
+iframe {
+    display: block;
+    margin: 15px auto;
+    background-color: var(--section-bg);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+}
+
+/* ===== SECTIONS ===== */
+body > * {
+    background-color: var(--section-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+/* ===== HORIZONTAL RULE ===== */
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--main-bg);
+    margin: 28px 0;
+}
+
+/* ===== MUTED TEXT ===== */
+small, .muted {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===== LINK STYLING (if needed) ===== */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
