@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Views, Urls and Tempaltes</title>
+     <link rel="stylesheet" href="../styles/style.css">
+  </head>
+  <body>
+    <h1>VIEWS,URLS AND  TEMPLATES</h1>
+    <h2>Views</h2>
+    <h3>Creating Views</h3>
+    <h4>Step 1</h4>
+    <p>
+      To create views one must first create an app. To do this refer to the
+      procedure below
+    </p>
+    <iframe
+      src="creating_app.html"
+      frameborder="0"
+      width="70%" height="400px"
+    ></iframe>
+    <h4>Step 2</h4>
+    <p>
+      Go to the views.py to write views. Views pass on request and get
+      responsse. This is the basic function of a server. A view must always take
+      in a request and return a response object. Either a redirect or a render or a 
+      Httpresponse object.
+    </p>
+    <h5>example of views using Httpresponse</h5>
+    <p>An example while using htto response is done below</p>
+    <img src="views.png" alt="A picture of views using http response">
+    <p>Remember writting the viewss is part of the pie. In order to display it we need to redirect it from the urls.py folder</p>
+    
+    
+    <!-- urls.py -->
+    <h2>Urls</h2>
+    <h3>Creating Urls</h3>
+    <h4>Step 1</h4>
+    <p><mark>urls.py only create the channels to get the page</mark></p>
+    <p>
+      To create urls one must first go to the urls.py file in the app folder.
+    </p>
+    <h4>Step 2</h4>
+      <p>Then import the views from the views.py file.
+      </p>
+      <h4>Step 3</h4>
+        <p>
+      After that create a list of
+      url patterns and map them to the views created in the views.py file.
+    </p>
+    <h5>example of urls.py mapping to views.py</h5>
+    <img src="first_urls1.png" alt="A picture of urls mapping to views">
+    <h4>Step 4</h4>
+    <p>
+      Finally go to the main(one) urls.py file in the project folder and include the
+      app urls.py file.Also you have to import include from django.urls
+    </p>
+    <h5>example of main urls.py including app urls.py</h5>
+    <img src="one_urls1.png" alt="A picture of main urls including app">
+    <h4>Step 5</h4>
+
+    <p>Now run the server and go to the browser to see the result</p>
+    <img src="results.png" alt="A picture of the result in the browser">
+    <p>Great now we have a working Django application!</p>
+
+    <h2>Templates</h2>
+    <h3>Creating Templates</h3>
+    <h4>Step 1</h4>
+    <p>
+      To create templates one must first create a folder named templates in the
+      app folder.
+    </p>
+    <h4>Step 2</h4>
+    <p>
+      Then create an HTML file inside the templates folder.Name it indx.html
+    </p>
+    <img src="folder1.png" alt="A picture of templates folder">
+    <h4>Step 3</h4>
+    <p>
+      Finally, in the views.py file, use the render function to return the template.
+    </p>
+    <h5>example of views.py rendering the template</h5>
+    <img src="views2.png" alt="A picture of views rendering template">
+    <h4>Step 4</h4>
+    <p>Next is to update the urls with the new changes of the new function</p>
+    <h5>example of urls.py mapping to the new view function</h5>
+    <img src="urls2.png" alt="A picture of urls mapping to new view">
+    <h4>Step 5</h4>
+    <p>To render you must make the settings.py recognize the template and the app so add the app among the installed app</p>
+    <h5>example of settings.py including the app</h5>
+    <img src="settings1.png" alt="A picture of settings including the app">
+    <h4>Step 6</h4>
+    <p>Now run the server and go to the browser to see the result</p>
+    <img src="template_result.png" alt="A picture of the template result in the browser">
+    <p>Great now we have a working Django application with template rendering!</p>
+
+ 
+
+
+    <p>if you have any question please contact me via the link below</p>
+    <a href="https://githua.pythonanywhere.com/contact/"">Contact Me</a>
+  </body>
+</html>

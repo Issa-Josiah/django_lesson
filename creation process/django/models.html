@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Models</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <h1>MODELS, INSERT DATA, UPDATE DATA, DELETE DATA, AND UPDATING MODELS</h1>
+    <h2>MODELS</h2>
+    <h3>Creating Models</h3>
+    <p>
+      To create models, one must create the application then go to the models.py
+      file in the app folder. To create the application see the frame below
+    </p>
+    <iframe
+      src="creating_app.html"
+      frameborder="0"
+      width="70%"
+      height="400px"
+    ></iframe>
+    <h4>Step 1</h4>
+    <p>
+      Define a class that inherits from models.Model. Our class we will name it
+      Fist
+    </p>
+    <h4>Step 2</h4>
+    <p>
+      Add fields to the model class. In our case we will use a charfield for the
+      name and a text field for the description. See the image below
+    </p>
+    <img
+      src="models1.png"
+      alt="A picture of models.py file with Fist model defined"
+    />
+    <h4>Step 3</h4>
+    <p>
+      Run migrations to create the database tables. We will input the code below
+      to runmigrations for the models created and any other migrations
+    </p>
+    <pre><code>python manage.py makemigrations
+                python manage.py migrate</code></pre>
+    <p>
+      The makemigrations command creates new migration files based on the
+      changes detected to your models. The migrate command applies those
+      migrations to the database, creating or modifying tables as needed.
+    </p>
+    <img
+      src="migrations1.png"
+      alt="This shows the terminal with the commands to run migrations"
+    />
+    <p>to view the model go to the migrations to see it</p>
+    <img src="init1.png" alt="the migrations made aree seen here" />
+    <p>to view the migrations via the terminal write the code below</p>
+    <pre><code>python manage.py showmigrations</code></pre>
+    <p>Now we are done with creating models and making migrations</p>
+    <h4>Step 4</h4>
+    <p>
+      We now want to view the data of the models in the database. The data are
+      usually saved in the database tables created by the migrations. This can
+      be viewed in the blank db.sql3 database that come when you install django
+    </p>
+    <p>
+      TTo view the data, you can use the Django shell or a database browser
+      tool. so lets use the django shell. Write the code below in the terminal
+    </p>
+    <pre><code>python manage.py sqlmigrate First 0001</code></pre>
+
+    <!-- Inserting data -->
+    <h2>INSERTING DATA</h2>
+    <h3>Inserting Data into Models</h3>
+    <p>
+      To insert data into models, you can use the Django shell or create views
+      and forms. Here, we will demonstrate how to insert data using the Django
+      shell. Follow these steps:
+    </p>    
+    <h4>Step 1</h4>
+    <p>Open the Django shell by running the following command in your terminal:</p>
+    <pre><code>python manage.py shell</code></pre>
+    <h4>Step 2</h4>
+    <p>Once inside the shell, import your model to create a querry set:</p>
+    <pre><code>from First.models import YourModel(Fist)
+YourModel(Fist).objects.all()</code></pre>
+    <h4>Step 3</h4>
+    <p>create data inside by doing the following after seeing the querryset</p>
+    <pre><code>fist= Fist(name="shadowfist", description="Moves through the shadows and have a sudden attack.")</code></pre>
+    <h4>Step 4</h4>
+    <p>Save the data to the database by calling the save() method on the instance:</p>
+    <pre><code>fist.save()</code></pre>
+    <p>You can check the model by pressing <code>:Yourmodelname(fist).objects.all().values()</code></p>
+    <p>This will show you your data</p>
+    <img src="data1.png" alt="This shows the data and the processes we used to create a data">
+    <p>For practice purposes you can create multiple data and enter before saving. Look at the example below</p>
+    <p>We have done minor errors so you can see how to identify error and fix them  </p>
+    <img src="data2.png" alt="This shows the data and the processes we used to create multiple data">
+    <img src="data3.png" alt="This shows the data and the processes we used to create multiple data">
+    <p>you tend to see repeartings but this happens for saving purposes</p>
+    <p>Exit the shell by typing:</p>
+    <pre><code>exit()</code></pre>
+    <p>You have successfully inserted data into your model!</p>
+
+    <!-- Updating data -->
+    <h2>UPDATING DATA</h2>
+    <p>To update data in your model, you can use the Django shell or create views and forms. Here, we will demonstrate how to update data using the Django shell:</p>
+    <h4>Step 1</h4>
+    <p>Open the Django shell by running the following command in your terminal:</p>
+    <pre><code>python manage.py shell</code></pre>
+    <h4>Step 2</h4>
+    <p>Once inside the shell, import your model:</p>
+    <pre><code>from First.models import Fist</code></pre>
+    <h4>Step 3</h4>
+    <p>Select the specific instance you want to update:</p>
+    <pre><code>fist = Fist.objects.get(name="shadowfist")</code></pre>
+    <h4>Step 4</h4>
+    <p>Update the fields of that instance:</p>
+    <pre><code>fist.description = "Moves through shadows and has a sudden attack.Played in Nigeria"</code></pre>
+    <h4>Step 5</h4>
+    <p>Save the changes to the database:</p>
+    <pre><code>fist.save()</code></pre>
+    <p>In the example below you will see i haverelayed the previous data of the last input , then changed the name, then relayed the data, then changed the description and finally relayed the data again.  You can update anything you wish from here</p>
+    <img src="data3.png" alt="In this section we are updating data">
+
+    <!-- deleting data -->
+    <h2>DELETING DATA</h2>
+    <p>To delete data from your model, you can use the Django shell or create views and forms. Here, we will demonstrate how to delete data using the Django shell:</p>
+    <h4>Step 1</h4> 
+    <p>Open the Django shell by running the following command in your terminal:</p>
+    <pre><code>python manage.py shell</code></pre>
+    <h4>Step 2</h4>
+    <p>Once inside the shell, import your model:</p>
+    <pre><code>from First.models import Fist</code></pre>
+    <h4>Step 3</h4>
+    <p>Select the specific instance you want to delete:</p>
+    <pre><code>x = Fist.objects.all()[2]</code></pre>
+    <h4>Step 4</h4>
+    <p>Delete the instance from the database:</p>
+    <pre><code>x.delete()</code></pre>
+    <p>In the example below you will see i haverelayed the previous data of
+    the last input , then deleted the data, then relayed the data again to see it has been deleted</p>
+    <img src="data4.png" alt="In this section we are deleting data">
+
+    <h4>Step 3</h4>
+    <p>Deleting multiple data you do this.  Filter the ids</p>
+    <pre><code>Fist.objects.filter(id__in=[3, 4]).delete()</code></pre>
+    <img src="data5.png" alt="In this section we are deleting multiple data">
+    <p>You will notice that i first call the objects so that you can see them all then i delete then i call them so that you can see the remaining objects.</p>
+
+
+    <!-- updating model -->
+    <h2>UPDATING MODELS</h2>
+    <p>
+      To update models, you need to make changes to the model class in
+      models.py file, then create and apply new migrations. Here are the steps
+      to update a model: 
+    </p>
+    <h3>Recalling</h3>
+    <p>From the process of creating models, we add more models.</p>
+    <h4>Step 1</h4>
+    <p>
+      Make changes to the model class in models.py file. For example, you can
+      add a new field, modify an existing field, or delete a field. Let's say
+      we want to add a new field called "age" to the Fist model. Remember age is an integer field.
+    </p>
+    <h4>Step 2</h4>
+    <p>
+      Create new migration files to reflect the changes made to the model.
+      Run the following command in the terminal:
+    </p>
+    <pre><code>python manage.py makemigrations</code></pre>
+    <h4>Step 3</h4>
+    <p>
+      Apply the new migrations to the database by running the following
+      command:
+    </p>
+    <pre><code>python manage.py migrate</code></pre>
+    <p>
+      After running these commands, the database schema will be updated to
+      reflect the changes made to the model. You can verify the changes by
+      checking the database or using the Django shell to inspect the model.
+    </p>
+    <img src="data6.png" alt="The updated models and the migrations made">
+    <p>Afterwards you can try inserting valures and updating values</p>
+    <img src="data7.png" alt="Inserting the different values of the updated model filed age">
+
+    <p>We have come to the end of the lesson</p>
+
+     <p>if you have any question please contact me via the link below</p>
+    <a href="https://githua.pythonanywhere.com/contact/"">Contact Me</a>
+
+
+
+  </body>
+</html>
