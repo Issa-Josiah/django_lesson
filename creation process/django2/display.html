@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA DISPLAY</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Displaying data</h1>
+    <p>IThere is a way of displaying data of a model in the template. You must first create thehmodels and other functions. Lets remind ourselves of model creation</p>
+    <iframe src="../django1/models.html" frameborder="0" width="70%" height="300px"></iframe>
+    <h2>Templates</h2>
+    <h3>Creating Templaes</h3>
+    <h4>Step 1</h4>
+    <p>Create a folder named templates in your app directory</p>
+    <h4>Step 2</h4>
+    <p>Create an html file in the templates folder</p>
+    <h4>Step 3</h4>
+    <p>In your views.py file, import the model you created and the render function from django.shortcuts</p>
+    <h4>Step 4</h4>
+    <p>Create a function that will fetch data from the model and render it to the template you created</p>
+     <img src="views1.png" alt="the views page">
+    <h4>Step 5</h4>
+    <p>In your urls.py file, import the function you created in views.py and map it to a url pattern</p>
+    <h4>Example</h4>
+    <img src="urls1.png" alt="the url page">
+   
+    <h4>Step 6</h4>
+    <p>in html file write the template code to display the data</p>
+    <img src="template1.png" alt="the template page">
+    <h4>Step 7</h4>
+    <p>we can also add a details button by creating a link to a detail page in the template</p>
+    <p>The process of the details is the same as the display process with addiional information and arrangements</p>
+    <p>the detail page is below</p>
+    <img src="total1.png" alt="a combination of the code and the views">
+    <h4>Step 8</h4>
+    <p>404 Errors can also be displayed . When you debug the project as false you make the project return the 404 error of the code given.</p>
+    <p>below is the code and what is shown in the template</p>
+    <img src="error.png" alt="what is displayed when there is a 404 error">
+    <h4>Step 9</h4>
+    <p>Finally there is the testing template . Instead of getting a model you can directly list a list in the context that you want to display and display it using for loops of the context in the template. This is template testing</p>
+    <img src="testing1.png" alt="This is the testing template code">
+
+    that is the end of template rendering
+
+</body>
+</html>

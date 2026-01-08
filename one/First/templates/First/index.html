@@ -1,0 +1,9 @@
+{%extends 'home.html'%}
+{%block title%}Home{%endblock%}
+{%block content%}
+    <h1>Welcome to the django project</h1>
+     <p>if you have any question please contact me via the link below</p>
+    <a href="https://githua.pythonanywhere.com/contact/"">Contact Me</a>
+    <h2>Click the link below to Go to dashboard</h2>
+    <a href="{% url 'dash' %}">Dashboard</a>
+{%endblock%}
