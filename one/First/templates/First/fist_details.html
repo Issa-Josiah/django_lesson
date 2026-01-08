@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% block title %}Fist Details{% endblock %}
+{% block content %}
+    <h1>fighting styles</h1>
+    <p>In fighting styles, there are many different techniques and approaches used by practitioners around the world. One of them is fists</p>
+    <h2>Fists</h2>
+    <ul>
+        {% for fist in allfists %}
+        NAME    
+        <li>{{ fist.name }}</li>
+           
+            <p>DESCRIPTION</p>
+            <li> {{ fist.description }}</li>
+           
+            <p>AGE</p>
+            <li>{{ fist.age }}</li>
+            
+           
+        {% endfor %}
+    </ul>
+     <a href="{% url 'dash'%}">BACK TO DASHBOARD</a>
+{% endblock %}
