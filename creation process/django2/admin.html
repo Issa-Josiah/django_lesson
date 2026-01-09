@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin page</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>ADMIN</h1>
+    <h2>Django admin</h2>
+    <h3>checking admin page</h3>
+    <h4>step 1</h4>
+    <p>To check admin page first of all confirm that in the projects urls.py the  admin url is available</p>
+    <img src="urls2.png" alt="checking if the admin url is available in urls.py">
+    <h4>step 2</h4>
+    <p>Then run the server using the command</p>
+    <pre><code>python manage.py runserver</code></pre>
+    <h4>Step 3</h4>
+    <p>Then open the browser and go to the url http://localhost:8000/admin</p>
+    <p>this will open an admin page and you will be forced to input a name and a password</p>
+    <img src="admin1.png" alt="what you see in admin page">
+    <h4>Step 4</h4>
+    <p>Input the superuser name and password you created earlier using the command</p>
+    <pre><code>python manage.py createsuperuser</code></pre>
+    <p>after inputting the name and password you will be redirected to the admin dashboard</p>
+    <img src="admin2.png" alt="admin dashboard">
+    <h4>Step 5</h4>
+    <p>To input model go adn register the model in the admin.py and return to theadmin dashboard to view</p>
+    <img src="admin3.png" alt="admin dashboard after registering model  in admin.py ">
+    <h4>Step 6</h4>
+    <p>To arrange the things you want to see from the models add a string to the model</p>
+    <img src="admin4.png" alt="To cahnge the model by inputing string and viewing on display">
+    <p>You can also change the view in the admin page</p>
+    <img src="admin5.png" alt="admin page after changing the view in admin page">
+    <h4>Step 7</h4>
+    <p>You can add, delete and edit values or onjects from the admin page</p>
+    <p>To add value you add new Fist in the values</p>
+    <p>to delete you enter the object you want to delete and delete object</p>
+    <p>to edit you enter the object you want to edit and make changes</p>
+    <img src="admin6.png" alt="adding deleting and editing objects in admin page">
+    <img src="admin7.png" alt="To edite and delete and add objects in admin page">
+
+
+</body>
+</html>
