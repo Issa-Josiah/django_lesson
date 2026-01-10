@@ -9,6 +9,10 @@
             <li>{{ fist.name }}: {{ fist.description }}</li>
         {% endfor %}
     </ul>
+    {% with location="USA" %}
+    <h5>Most of the styles above came from {{ location }}</h5>
+    {% endwith %}
 
     <a href="{% url 'details'%}">see details</a>
+    <a href="{% url 'Template'%}">Home </a>
 {% endblock %}

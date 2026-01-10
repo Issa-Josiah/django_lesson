@@ -1,6 +1,21 @@
 {%extends 'home.html'%}
 {%block title%}Home{%endblock%}
 {%block content%}
+
+    Hello, {{ plant }}
+    <br>
+    {% now "D  (H:i:s) "  %}
+    <br>
+      {% now "j/t"  %}
+      <br>
+    {% now "M F "  %}
+    <br>
+    {% now "Y"  %}
+    <br>
+
+  
+    
+   
     <h1>Welcome to the django project</h1>
      <p>if you have any question please contact me via the link below</p>
     <a href="https://githua.pythonanywhere.com/contact/"">Contact Me</a>

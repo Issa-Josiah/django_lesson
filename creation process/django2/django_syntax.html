@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Syntax</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>DJANGO SYNTAX</h1>
+
+    <!-- Django variables -->
+    <h2>Django variables</h2>
+    <h3>Django Template variables</h3>
+    <p>We are going to see the variables in template in views </p>
+    <h4>Step 1</h4>
+    <p>You render variables by putting  {{    }} </p>
+    <p>Example, while rendering the template earlier in display we saw the use of the  double calibrase</p>
+    <img src="template2.png" alt="A picture showing the double calibrasing ">
+    <p>The name allfist was from the views while the name was from the models. So basically this shows rendering from the views models and template.</p>
+    <h4>Step 2</h4>
+    <p>In the views the allfist was from the context part displayed named fist as you can see below</p>
+    <img src="views2.png" alt="The views part where all fist is rendered">
+    <h4>Step 3</h4>
+    <p>We can render directly from the template using with function. Look at the example below</p>
+    <img src="template3.png" alt="Rendering variable using a function with">
+    <h4>Step 4</h4>
+    <p>You can also render the variable by writting the variable name in the backend and commiting in the template using another name</p>
+    <img src="total2.png" alt="Rendering by writing in the backend">
+
+    <!-- django tags  -->
+     <h2>Django tags</h2>
+     <p>This include the for loops we had used initially to display the values of a model</p>
+     <h3>Tag references</h3>
+     <ol>
+        <li>autoescape this can decide to display the code symbols e.g {&lt} for less than in on and the code of it in off</li>
+     <mark><li>Using block it block and description e.g block content. this transfer info of child template to parent template</li></mark>
+     <li>comment; this is used to addd a comment in the template to show how code uis done</li>
+     <mark><li>csrf; this is for cross site request fogery</li></mark>
+     <li>cycle; this repeats or set condition of information inputted in the cycle.</li>
+     <li>debug; specify debuging conditions</li>
+     <mark></mark><li>extends; this takes the parent template to the child template</li></mark>
+     <li>filter;This filter  before returning it. like trancating words or making word capital letters etc</li>
+     <li>firstof; returns values that are not empty or false</li>
+     <mark></mark><li>for; this transport values from models or views. </li></mark>
+     <mark></mark><li>if; this provides a condition</li></mark>
+     <li>ifchanged; checks if the values have changed and writes the value</li>
+     <mark><li>includes; use to import template code to parent template</li></mark>
+     <li>lorem; inserts randow words example {% lorem 50 w %} w-words, b-blocks, p-paragraphs</li>
+     <li>now;  adds the date time and instance <code><h1>{% now "Y-m-d" %}</h1></code>
+    you can use specic formats like
+<ol>
+     <li>H	Hour (00-23)</li>
+    <li>g	Hour (1-12)</li>
+     <li>i	Minutes (00-59)</li>
+      <li>s	Seconds (00-59)</li>
+   
+        <li>j	Day of month (1-31)</li> 
+          <li>t	Number of days in month (28-31)</li>
+    <li>l	Day of week (Sunday-Saturday)</li>
+    <li>D	Day of week (Sun-Sat)</li>
+   
+    <li>M	Month, 3 letters (Jan-Dec)</li>
+    <li>F	Month, full text (January-December)</li>
+      <li>n	Month, 1 or 2 digits (1-12)</li>
+    
+    <li>Y	Year, 4 digits (0001-9999)</li>
+  
+  
+</ol>
+</li>
+<li>with; create variables in django. just like how we created in template variables</li>
+<li>verbatim; just like autoescape does verbatism this time round stops code excecution and display values how they are in webpage</li>
+<li>Templatetag; The templatetag tag is used to display characters that are normally used to perform Django tasks.
+    <pre>
+        Name	Output
+openvariable	{{
+closevariable	}}
+openblock	{%
+closeblock	%}
+openbrace	{
+closebrace	}
+opencomment	{#
+closecomment	#}
+
+    </pre>
+</li>
+<li>spaceless; The spaceless tag is used to remove any space between tags, in the code.</li>
+<li>resetcycle; when cycle is something it resets  <mark>note: there is closing tag for this like endresetcycle! but it needs the if condition</mark></li>
+<li>regroup ;it returns templates grouped as new list</li>
+    </ol>
+
+    <!-- if tags -->
+     <h2>If tags</h2>
+     <h3>look all the condition of if</h3>
+     <ul>
+        <li>==  equal to</li>
+        <li>!= not equal to</li>
+        <li> &lt; &lt;=  less than and less than or equal to  </li>
+        <li>&gt;  &gt;=   greater than and greater than or equal to</li>
+        <li>and  both condition correct</li>
+        <li>or    one condition correct</li>
+        <li>in. look for item somewhere</li>
+        <li>and or    use and first then or. it compares the two and values then it compares the or values</li>
+        <li>is   compare two values if they are completely same. that is from name to id to etc</li>
+     </ul>
+
+     <!-- for loops -->
+      <h2>for loops</h2>
+      <h3>condition of for loops</h3>
+      <p>as i first stated for loops can import model data</p>
+      <p>you can reverse the flow to start from last if we use &lt; reverse &gt;</p>
+      <p>example   <code>{% for x in jim reverse %}</code></p>
+      <p>incase the object is empty we can use the empty tag  <code>{% empty %}</code></p>
+
+
+      <h4>variables to use</h4>
+      <ul>
+        <li>forloop.counter</li>
+        <li>forloop.counter0</li>
+        <li>forloop.first</li>
+        <li>forloop.last</li>
+        <li>forloop.parentloop</li>
+        <li>forloop.revcounter</li>
+        <li>forloop.revcounter0 </li>
+      </ul>
+
+      <!-- include -->
+       <h2>include </h2>
+       <h3>include function</h3>
+       <p>include is used to add a file. from a html document . one can use with also if they had written something in the code in the included template</p>
+
+      
+</body>
+</html>
